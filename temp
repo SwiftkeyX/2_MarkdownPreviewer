@@ -1,0 +1,28 @@
+function FrontHashtag(props) {
+  let previewText = [];
+  
+  for (let i=0; i<props.value.length; i++) {
+        if (props.value[i][0] == "#" && props.value[i][1] == "#" && props.value[i][2] == "#") {
+          previewText[i] = (
+            <h3>{props.value[i]}</h3>
+          );
+        }
+        else if (props.value[i][0] == "#" && props.value[i][1] == "#") {
+          previewText[i] = (
+            <h2>{props.value[i]}</h2>
+          );
+        }
+        else if (props.value[i][0] == "#") {
+          previewText[i] = (
+            <h1>{props.value[i]}</h1>
+          );
+        }
+        else {
+          previewText[i] = (
+            <p>{props.value[i]}</p>
+          );
+        }
+  }
+
+  return previewText
+}
